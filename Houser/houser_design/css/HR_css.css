@@ -1,0 +1,638 @@
+@charset "utf-8";
+/* CSS Document */
+
+body
+{
+	
+	margin:0 auto;
+	font-family:"Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
+}
+
+#main_main
+{
+	width:100%;
+	margin:0 auto;
+	background-image:url(../../Houser_design/images/bgg11.jpg);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#main
+{
+	width:100%;
+	margin:0 auto;
+	background-image:url(../../Houser_design/images/bgg2.jpg);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+    background-size: cover;
+	background-position: -10px -7px;
+}
+
+#header
+{
+	width:100%;
+	height:120px;
+	position:fixed;
+	background-image:url(../../houser_design/images/hdbag.png);
+	background-repeat:no-repeat;
+	background-width:90%;
+	font-size:16px;
+	text-shadow:#444444 -1px;
+	color:#DDDDDD;
+}
+
+#header_main
+{
+	width:100%;
+	height:100px;
+	position:fixed;
+	background-image:url(../../houser_design/images/hdbag.png);
+	background-repeat:no-repeat;
+	background-width:90%;
+	font-size:16px;
+	text-shadow:#444444 -1px;
+	color:#DDDDDD;
+}
+
+#divhdnav
+{
+	float:left;
+	margin-left: 8%;
+}
+#navhdinfo
+{
+	margin:0;
+	padding:0;
+}
+
+#navhdinfo li
+{
+	list-style:none;
+	display:inline;
+	
+}
+
+#navhdinfo li ul
+{
+	position:absolute;
+	background-color: #50757C;
+	width: 111px;
+	margin: 0 auto;
+	margin-top: 100px;
+	margin-left: 319px;
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+	border-bottom: 1px solid white;
+	border-radius: 0 0 5px 5px;
+	display:none;
+}
+
+#navhdinfo li ul li
+{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin: 0 0 3px -40px;
+	padding: 12px 0 12px 22px;
+	display: block;
+	color: #FFF;
+}
+
+#navhdinfo li ul li a
+{
+	color: #FFF;
+	text-decoration:none;
+}
+
+#navhdinfo li ul li:hover
+{
+	color: #FFF;
+	font-size: 18px;
+	font-weight: 800;
+	background-color: rgb(86, 156, 156);
+	margin: 0 5px 0 -35px;
+	border-radius: 5px;
+}
+
+#navhdinfo li img
+{
+	float: left;
+	margin:0;
+	width: 160px;
+	height: 100px;
+}
+
+#navhdinfo li #a
+{
+	float: left;
+	width: 86px;
+	padding: 38px 8px 37px 44px;
+	margin-left: 20px;
+	border: solid #FFF 1px;
+	border-bottom: 0;
+	border-top: 0;
+	background-color: #517177;
+	background: url(../../Houser_design/images/left_infob.png) no-repeat 9px 35px;
+	text-decoration: none;
+	color: #FFF;
+	font-size: 16px;
+}
+
+#navhdinfo li #a:hover
+{
+	background-color:#50757C;
+}
+
+#navhdinfo li span
+{
+	float: left;
+	width: 64px;
+	padding: 37px 34px 34px 53px;
+	border: solid #FFF 1px;
+	border-bottom: 0;
+	border-top: 0;
+	border-left: 0;
+	background-color: #517177;
+	background: url(../../Houser_design/images/left_infoa.png) no-repeat 16px 40px;
+	text-decoration: none;
+	color: #FFF;
+	font-size: 19px;
+	cursor: pointer;
+}
+
+#navhdinfo li span:hover
+{
+	background-color:#50757C;
+}
+
+#mspce
+{
+	float: right;
+	width: 150px;
+	margin-right: 100px;
+	margin-top: 25px;
+	padding: 8px 17px;
+	border-radius: 3px;
+	background-color: #016cdf;
+	box-shadow: 1px 2px 2px #394B81;
+	cursor: pointer;
+	
+}
+
+#mspce a
+{
+	text-decoration:none;
+	color:#FFF;
+	font-size: 16px;
+	font-weight: 800;
+}
+
+#Qoption
+{
+	width: auto;
+	text-align: right;
+	position: fixed;
+	margin-left: 55%;
+	top: 160px;
+}
+
+.indfc
+{
+	margin: -10px 0 0 0 !important;
+}
+
+/*************Inside the main content*******************/
+#mainContentD
+{
+	width:100%;
+	height:800px;
+	margin:0 auto;
+	margin-top:11px;
+}
+
+
+
+#ads
+{
+	width:100%;
+	height:auto;
+	margin-top:50px;
+}
+
+.adiv
+{
+	background-color: rgba(247, 248, 250, 0.21);
+	width: 40%;
+	float:left;
+	height: 320px;
+	margin: 6% 0 0 6%;
+	padding: 3px;
+	text-align: center;
+	border-radius: 7px 7px 0 0;
+	
+}
+
+.adiv h2
+{
+	margin: 0;
+	padding: 0;
+	background-color: #CCC;
+	border-radius: 7px 7px 0 0;
+	margin: -3px;
+	color: rgb(37, 36, 41);
+	text-shadow: 0px -1px 2px beige;
+	padding: 3px;
+	/*background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.22), rgba(204, 204, 204, 0.64));
+	background: -webkit-gradient(linear, right top, right bottom, from(rgba(255, 255, 255, 0.22)), to(rgba(204, 204, 204, 0.64)));
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#fff', EndColorStr='#eeeeee', GradientType=0);
+	border: 1px solid #CCC;
+	-moz-box-shadow: 1px 1px 5px #555;
+	-webkit-box-shadow: 1px 1px 3px #555;
+	box-shadow: 1px 1px 3px #555;
+	-khtml-box-shadow: 1px 1px 3px #555;
+	-webkit-transition-duration: 0.8s;
+	-moz-transition-duration: 0.8s;*/
+}
+#tog_search
+{
+	width: 92%;
+	display: none;
+	margin-bottom: -1%;
+	margin-left: 8%;
+	text-align: center;
+}
+
+#Qtobut
+{
+	background: rgb(143, 162, 165) url(../../Houser_design/images/arwdown.png) no-repeat 132px 13px;
+	box-shadow: 0 3px #82829E;
+	border: 0;
+	border-radius: 2px;
+	color: #FCFDFD;
+	cursor: pointer;
+	margin: -2px 66px;
+}
+
+#mainContent
+{
+	width:99.9%;
+	margin:0 auto;
+	margin-top:11px;
+}
+#houseDisplay
+{
+	float:left;
+	background-color:#F03;
+}
+
+#aclpb
+{
+	width: 100%;
+	height: 401px;
+	border-radius: 5px 0 0 5px;
+	box-shadow: 0 0 15px rgb(88, 71, 71);
+}
+
+#aclpb img
+{
+	border-radius: 5px 0 0 5px;
+}
+
+#log_an_right
+{
+	float:right; 
+	width:22%;
+}
+#new
+{
+	background-image:url(../../Houser_design/images/page-body-bg.png);
+	width:99%;
+	
+}
+#band
+{
+	width: 102%;
+	height: 40px;
+	background-image: url(../../Houser_design/images/test.png);
+	background-repeat: no-repeat;
+	margin: 0 -2px 0;
+	font-size: 18px;
+	color: #DDDDDD;
+	float: none;
+	text-decoration: blink;
+	padding-top: 1px;
+}
+#announce
+{
+	width: 87%;
+	height: 45%;
+	background-color: #E9E9D3;
+	margin: 0 auto;
+	margin-top: -6px;
+	padding-bottom: 2px;
+	font-size: 13px;
+	border-radius: 0 0 7px 7px;
+	text-align: center;
+	
+}
+#announce img
+{
+	padding: 4px 0 0 0;
+	width: 96%;
+}
+
+#view
+{
+	background:#50747c;
+	color:#FFC;
+	width:100px; 
+	height:20px;  
+	margin-left:35%;
+	text-align:center; 
+	border-radius:4px; 
+	margin-bottom:5%;
+	float:none;
+}
+
+#lk{ text-decoration:none;}
+#lk div:hover 
+{
+	background-color:#F63;
+}#lk div:visited 
+{
+	background-color:#F63;
+}
+
+/***********end of the main content *********************/
+
+/******************login*******************/
+#field_log
+{
+	width:99%;
+	box-shadow:0 0 15px black;
+	/*float:right;*/
+	margin: 5% 0 0 0;
+	border-radius:6px;
+	background-image: url(../../Houser_design/images/page-body-bg.png);
+}
+#int_div_login
+{
+	width: 92%;
+	margin: 0 0 1% 0;
+	padding: 0 8px 4px;
+	color: #333;
+	text-shadow: 0 0 15px rgb(43, 41, 40);
+	border-radius: 6px;
+}
+#leave
+{
+	background-image:url(../../Houser_design/images/img_menu2a.jpg);
+	width:85px;
+	margin:0 0 6px 6px;
+	padding: 3px;
+	text-align:center;
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+}
+
+#p_int_div
+{
+	margin: 0;
+	padding: 2px 3px;
+	text-align: center;
+	text-shadow: 0px -1px 0 #ACA95C;
+	color: #F72B05;
+	font-size: 18px;
+	font-weight: 800;
+	text-decoration: blink;
+	word-spacing:3px;
+}
+
+#ullog
+{
+	margin: 3% 2%;
+	padding: 2% 0 0 0;
+	text-shadow: 0 0 0;
+}
+
+#ullog li
+{
+	list-style:none;
+	background-image:url(../../Houser_design/images/bullet.gif);
+	background-repeat:no-repeat;
+	background-position: 0 16%;
+	padding: 0 11%;
+	color: #082B52;
+	word-spacing:5px;
+}
+
+.field_log
+{
+	color:#039;
+	text-align:center;
+	width: 100%;
+	height: 94%;
+	font-weight:600;
+	border:0;
+}
+
+.button1
+{
+	border:0;
+	cursor:pointer;
+	font-weight:600;
+	height:25px;
+	width:130px;
+	margin-top:5px;
+	margin-right:5px;
+	background: -moz-linear-gradient(top, #fff, #eeeeee); 
+	background: -webkit-gradient(linear, right top, right bottom, from(#069), to(#09C)); 
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#fff', EndColorStr='#eeeeee', GradientType=0); 
+	-moz-box-shadow:1px 1px 3px #555;-webkit-box-shadow:1px 1px 3px #555;box-shadow:1px 1px 3px #555;-khtml-box-shadow:1px 1px 3px #555; 
+	-webkit-transition-duration: 0.8s;-moz-transition-duration: 0.8s;
+}
+
+.button2
+{
+	border:0;
+	cursor:pointer;
+	font-weight:600;
+	height:25px;
+	width:100px;
+	background: -moz-linear-gradient(top, #fff, #eeeeee); 
+	background: -webkit-gradient(linear, right top, right bottom, from(#069), to(#09C)); 
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#fff', EndColorStr='#eeeeee', GradientType=0); 
+	-moz-box-shadow:1px 1px 3px #555;-webkit-box-shadow:1px 1px 3px #555;box-shadow:1px 1px 3px #555;-khtml-box-shadow:1px 1px 3px #555; 
+	-webkit-transition-duration: 0.8s;-moz-transition-duration: 0.8s;
+}
+
+.logfm1
+{
+	display:none;
+	padding: 15px 0 0 0;
+	margin-bottom: 9px;
+	margin-left: 3px;
+}
+
+.logfm2
+{
+	display:none;
+	padding: 15px 0 0 0;
+	margin-bottom: 9px;
+	margin-left: 3px;
+}
+
+.logfm1 a
+{
+	float:left;
+}
+
+.logfm2 a
+{
+	float:left;
+}
+
+#pshopt
+{
+	
+}
+
+#pshopt span
+{
+	cursor: pointer;
+	text-shadow: 0 0 0;
+	background-color: #50757C;
+	color: #FFF;
+	margin: 0 0 0 10px;
+	padding: 2px 20px;
+	font-size: 17px;
+	border-radius: 5px 5px 0 0;
+}
+
+#pshopt span:hover
+{
+	background-color: #69C;
+}
+
+#crt a
+{
+	margin: 0;
+	padding: 2px;
+	font-size: 18px;
+	color: #1912AC;
+	font-weight: 700;
+	text-decoration:none;
+}
+
+#errcrt
+{
+	background-color: #EED0E7;
+	padding: 9px;
+}
+
+#errcrt h5
+{
+	color: rgb(199, 28, 28);
+	margin: 0;
+	text-shadow: 0 0;
+	font-size: 13px;
+	font-weight: 100;
+}
+
+/*****************end*********************/
+
+/*************Inside nav bar*******************/
+#navBar
+{
+	width: 100%;
+	height:40px;
+	margin-top:4px;
+	margin-left:-25px;
+	position:fixed;
+}
+
+#div1 
+{ 
+	 background-image:url(../../Houser_design/images/bg-g.png);
+	 height:66px; width:25px; float:left;
+}
+#div2 
+{ 
+	background-image:url(../../Houser_design/images/img_menu2a.jpg);
+	height:35px; 
+	background-repeat:repeat;
+	width:80%;
+	float:left;
+	padding-top:5px;
+	padding-left:10%;
+}
+#div3 
+{ 
+	background-image:url(../../Houser_design/images/bg-d.png);
+ 	height:66px; width:22px; float:left;
+}
+
+/*#navBar ul
+{
+	margin: 0px;
+	padding: 0px;
+	font-size:19px;
+	margin-top:-4px;
+	height:30px;
+	padding-top:8px;
+	
+	
+}
+/*#navBar li 
+{
+	display:inline;
+	text-align:center;
+}
+
+/*#navBar li a
+{
+	text-decoration:none;
+	/*font-family:"Times New Roman", Times, serif;*/
+	/*font-family:Candara;
+	font-weight:600;
+	position:relative;
+	border-left:1px #69F ridge;
+	padding:9px 15px 9px 15px;
+	margin-left:-6px;
+}
+
+/*#navBar li span
+{
+	text-decoration:none;
+	/*font-family:"Times New Roman", Times, serif;
+	color:#036;*/
+	/*font-family:Candara;
+	color:#50747C;
+	font-weight:600;
+	position:relative;
+	border-left:1px #69F ridge;
+	padding:9px 15px 9px 15px;
+	margin-left:-6px;
+	cursor:pointer;
+}
+/*#navBar li a:link {color:#036;color:#50747C;}  unvisited link */
+/*#navBar li a:visited {color:#50747C;} /* visited link */
+/*#navBar li a:hover {/*color:#09F*//*color:#58788c;; background-image:url(../../Houser_design/images/d-nav-bottom.png);} /* mouse over link */
+/*#navBar li a:active {/*color:#036;color:#50747C;} /* selected link */
+/***********end of the fnav bar*********************/
+
+/*************Inside footer*******************/
+#footer
+{
+	width:100%;
+	height:7%;
+	clear:both;
+	margin:0 auto;
+	position:relative;
+	background-color:#50747C;
+}
+/***********end of the footer*********************/
+

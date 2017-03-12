@@ -1,0 +1,68 @@
+
+<IfModule mod_rewrite>
+	RewriteEngine On
+	#RewriteBase /
+    
+	RewriteRule ^/?([a-zA-Z_]+)/([a-zA-Z_]+)/([a-zA-Z_]+)$ display.php?country=$1&state=$2&city=$3 [L]
+</IfModule>
+
+
+Options +FollowSymLinks
+
+##here is the code for the 401 error##
+ErrorDocument 401 "<html><head><title>401 error found</title></head><body><br/><br/><br/><div style='width:50%; margin:0 auto;'><div style='background-color:#09F; width:100%; height:25px; text-align:center; color:#FFF; font-size:18px; border-radius:8px 8px 0 0 ;'>401 - Error encountered: Page not found !</div><div style='background-color:#CCA; width:100%; color:#333;'><p style='padding-left:20px; margin:0 0 0 0;'><br/>This may due to:<ul style='padding-left:80px;'><li>a mistyped address - broken link</li><li>an access denied to the page</li><li>not existance of the page</li><li>error while processing the request</li></ul></p><br/></div></div></body></html>"
+
+##here is the code for the 403 error##
+ErrorDocument 403 "<html><head><title>403 error found</title></head><body><br/><br/><br/><div style='width:50%; margin:0 auto;'><div style='background-color:#09F; width:100%; height:25px; text-align:center; color:#FFF; font-size:18px; border-radius:8px 8px 0 0 ;'>403 - Error encountered: Page not found !</div><div style='background-color:#CCA; width:100%; color:#333;'><p style='padding-left:20px; margin:0 0 0 0;'><br/>This may due to:<ul style='padding-left:80px;'><li>a mistyped address - broken link</li><li>an access denied to the page</li><li>not existance of the page</li><li>error while processing the request</li></ul></p><br/></div></div></body></html>"
+
+##here is the code for the 404 error##
+ErrorDocument 404 "<html><head><title>404 error found</title></head><body><br/><br/><br/><div style='width:50%; margin:0 auto;'><div style='background-color:#09F; width:100%; height:25px; text-align:center; color:#FFF; font-size:18px; border-radius:8px 8px 0 0 ;'>404 - Error encountered: Page not found !</div><div style='background-color:#CCA; width:100%; color:#333;'><p style='padding-left:20px; margin:0 0 0 0;'><br/>This may due to:<ul style='padding-left:80px;'><li>a mistyped address - broken link</li><li>an access denied to the page</li><li>not existance of the page</li><li>error while processing the request</li></ul></p><br/></div></div></body></html>"
+
+
+##here is the code for the 408 error##
+ErrorDocument 408 "<html><head><title>408 error found</title></head><body><br/><br/><br/><div style='width:50%; margin:0 auto;'><div style='background-color:#09F; width:100%; height:25px; text-align:center; color:#FFF; font-size:18px; border-radius:8px 8px 0 0 ;'>408 - Error encountered: Page not found !</div><div style='background-color:#CCA; width:100%; color:#333;'><p style='padding-left:20px; margin:0 0 0 0;'><br/>This may due to:<ul style='padding-left:80px;'><li>a mistyped address - broken link</li><li>an access denied to the page</li><li>not existance of the page</li><li>error while processing the request</li></ul></p><br/></div></div></body></html>"
+
+##here is the code for the 410 error##
+ErrorDocument 410 "<html><head><title>410 error found</title></head><body><br/><br/><br/><div style='width:50%; margin:0 auto;'><div style='background-color:#09F; width:100%; height:25px; text-align:center; color:#FFF; font-size:18px; border-radius:8px 8px 0 0 ;'>410 - Error encountered: Page not found !</div><div style='background-color:#CCA; width:100%; color:#333;'><p style='padding-left:20px; margin:0 0 0 0;'><br/>This may due to:<ul style='padding-left:80px;'><li>a mistyped address - broken link</li><li>an access denied to the page</li><li>not existance of the page</li><li>error while processing the request</li></ul></p><br/></div></div></body></html>"
+
+##here is the code for the 500 error
+ErrorDocument 500 "<html><head><title>500 error found</title></head><body><br/><br/><br/><div style='width:50%; margin:0 auto;'><div style='background-color:#09F; width:100%; height:25px; text-align:center; color:#FFF; font-size:18px; border-radius:8px 8px 0 0 ;'>500 - Error encountered: Page not found !</div><div style='background-color:#CCA; width:100%; color:#333;'><p style='padding-left:20px; margin:0 0 0 0;'><br/>This may due to:<ul style='padding-left:80px;'><li>a mistyped address - broken link</li><li>an access denied to the page</li><li>not existance of the page</li><li>error while processing the request</li></ul></p><br/></div></div></body></html>"
+
+##here is the code for the 503 error
+ErrorDocument 503 "<html><head><title>503 error found</title></head><body><br/><br/><br/><div style='width:50%; margin:0 auto;'><div style='background-color:#09F; width:100%; height:25px; text-align:center; color:#FFF; font-size:18px; border-radius:8px 8px 0 0 ;'>503 - Error encountered: Page not found !</div><div style='background-color:#CCA; width:100%; color:#333;'><p style='padding-left:20px; margin:0 0 0 0;'><br/>This may due to:<ul style='padding-left:80px;'><li>a mistyped address - broken link</li><li>an access denied to the page</li><li>not existance of the page</li><li>error while processing the request</li></ul></p><br/></div></div></body></html>"
+
+#####################################################################
+##Block Index Display## 
+Options All -Indexes
+
+##Secure htaccess file ## 
+<Files .htaccess> 
+	Order Allow,Deny 
+	Deny from all 
+</Files>
+
+<FilesMatch "\.(php)$"> 
+	Order Deny,Allow
+	Deny from all
+	Allow from 127.0.0.1
+	Allow from 192.168.110.109
+	Allow from all
+</FilesMatch>
+
+##Secure DBConnector file ## 
+<Files Houser_core/DBConnector.php> 
+	Order Allow,Deny 
+	Deny from all 
+</Files>
+
+##Secure database file ## 
+<Files houser_database.sql> 
+	Order Allow,Deny 
+	Deny from all 
+</Files>
+
+<FilesMatch "^\.ht">
+    Order allow,deny
+    Deny from all
+    Satisfy All
+</FilesMatch>

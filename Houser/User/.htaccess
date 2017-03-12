@@ -1,0 +1,8 @@
+<IfModule mod_rewrite>
+	RewriteEngine On
+	RewriteCond %{REQUEST_FILENAME} -f [OR]
+	RewriteCond %{REQUEST_FILENAME} -d
+	RewriteRule .* - [L]
+	RewriteRule ^(.*)$ http://localhost/houser.com/user/index.php?action=$1 [NC]
+	RewriteRule ^lionel\.php ers.php
+</IfModule>

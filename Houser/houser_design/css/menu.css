@@ -1,0 +1,180 @@
+/* Reset code to remove theme inherent styling */
+.nav_menu ul.menu ul, .nav_menu ul.menu li {
+list-style: none; 
+padding: 0; 
+margin: 0;
+}
+.nav_menu ul.menu ul {
+display: none; /* Hides non-mega links */
+}
+.nav_menu ul.menu .sub ul {
+display: block; /* overrides above hide */
+}
+
+/* Main menu styles */
+.nav_menu ul.menu {
+background: #CCC url(../../Houser_design/images/bg_nav.png);
+width: 96%;
+height: 40px;
+margin: -9px 0 0 0;
+padding-left: 84px;
+float:left;
+border-right: 0; 
+border-left: 0; 
+position: relative; /* Important - required for positioning of mega menu */ 
+line-height: 16px;
+
+}
+
+.nav_menu ul.menu li {
+float: left; 
+font-weight: bold;
+}
+
+.nav_menu ul.menu li a {
+float: left; 
+display: block;  
+padding: 9px 25px;
+margin: 2px 0 0 0; 
+color: #50747C;
+border-left:2px groove #FFF;
+font-size: 16px;
+font-weight: 100;
+text-decoration: none;
+}
+
+.nav_menu ul.menu li.mega-hover a, .nav_menu ul.menu li a:hover {
+color: #000; 
+background-color:#FFF;
+text-shadow: none;
+}
+
+/* Arrow tag for parent links */
+.nav_menu ul.menu li a.dc-mega {
+padding-right: 38px; /* Additional padding for arrow */
+position: relative; /* Required for arrow positioning */
+}
+.nav_menu ul.menu li a .dc-mega-icon {
+display: block; 
+position: absolute; 
+top: 15px; 
+right: 15px; 
+width: 8px; 
+height: 6px; 
+background: url(../../houser_design/images/arrow.png) no-repeat 0 0;
+}
+.nav_menu ul.menu li.mega-hover a .dc-mega-icon {
+background-position: 0 100%;
+
+}
+
+/* Mega Menu Styling */
+/* Mega Drop Down Container */
+.nav_menu ul.menu li .sub-container {
+position: absolute; /* Required */
+padding-left: 10px; 
+margin-left: -3px;
+}
+.nav_menu ul.menu li .sub {
+background: url(../../Houser_design/images/bg_sub.png) no-repeat 100% 100%; 
+padding: 20px 20px 20px 10px;
+}
+.nav_menu ul.menu li .sub-container.mega .sub {
+padding: 20px 0 0 10px;
+}
+.nav_menu ul.menu li .sub .row { /* Clear the sub-menu floats */
+width: 100%; 
+overflow: hidden; 
+clear: both;
+}
+.nav_menu ul.menu li .sub li {
+float: none; 
+font-size: 14px; 
+font-weight: bold;
+}
+/* Sub-menu Headers */
+.nav_menu ul.menu li .sub li.mega-hdr { /* Sub-menu headers - i.e. 2nd level navigation */
+float: left; /* Float the sub-menus and give them a fixed width to from the mega menu rows */
+width: 48%;
+margin: 0 10px 14px 0px;
+border: 1px solid #ccc; 
+}
+.nav_menu ul.menu li .sub a { /* Clear the styles from the top-level links and set the font styles */
+background: none; 
+border: none; 
+text-shadow: none; 
+color: #111; 
+padding: 7px 10px; 
+display: block; 
+float: none; 
+text-decoration: none; 
+font-size: 0.9em; 
+}
+.nav_menu ul.menu li .sub li.mega-hdr a.mega-hdr-a {
+padding: 5px 10px;
+margin-bottom: 5px;
+margin-top: 0px;
+border-bottom: 1px solid #ccc; 
+text-transform: uppercase; 
+font-weight: 100; 
+color: #000; 
+font-size:12px;
+background: #EAEAEA url(../../Houser_design/images/bg_hdr.png) repeat-x center center;
+}
+.nav_menu ul.menu li .sub li.mega-hdr a.mega-hdr-a:hover {
+color: #000; 
+text-shadow: none;
+background-color:#FFF;
+}
+
+
+/* Add the individual sub-menu backgrounds */
+.nav_menu ul.menu li .sub li#menu-item-1 {
+/*background: url(../../Houser_design/images/hsbuy.jpg) no-repeat 94% 52%;*/
+}
+.nav_menu ul.menu li .sub li#menu-item-2 {
+background: url(../../Houser_design/images/bg_sedan.jpg) no-repeat 94% 52%;
+}
+.nav_menu ul.menu li .sub li#menu-item-3 {
+background: url(../../Houser_design/images/bg_convert.jpg) no-repeat 94% 52%;
+}
+.nav_menu ul.menu li .sub li#menu-item-4 {
+background: url(../../Houser_design/images/bg_suv.jpg) no-repeat 94% 52%;
+}
+.nav_menu ul.menu li .sub li#menu-item-5 {
+background: url(../../Houser_design/images/bg_pickup.jpg) no-repeat 94% 52%;
+}
+.nav_menu ul.menu li .sub li#menu-item-6 {
+background: url(../../Houser_design/images/bg_sports.jpg) no-repeat 94% 52%;
+}
+
+/* Style the 3rd level links */
+.nav_menu ul.menu li .sub li ul li {
+margin-right: 90px;
+}
+.nav_menu ul.menu .sub li.mega-hdr li a {
+color: #444;
+font-weight: normal; 
+padding: 9px 0 3px 25px; 
+background: url(../../Houser_design/images/bullet.png) no-repeat 10px 14px; 
+}
+.nav_menu ul.menu .sub li.mega-hdr li a:hover {
+color: #990000;
+background-image: url(../../Houser_design/images/bullet_on.png);
+}
+
+/* Styling for items with only 2 levels */
+.nav_menu ul.menu li .sub-container.non-mega .sub {
+padding: 20px 20px 20px 10px;
+}
+.nav_menu ul.menu li .sub-container.non-mega li {
+width: 190px; /* Set the drop down width */
+}
+.nav_menu ul.menu li .sub-container.non-mega li a {
+padding: 7px 5px 7px 22px; 
+background: url(../../Houser_design/images/bullet.png) no-repeat 5px 12px;
+}
+.nav_menu ul.menu li .sub-container.non-mega li a:hover {
+color: #990000;
+background-image: url(../../Houser_design/images/bullet_on.png);
+}

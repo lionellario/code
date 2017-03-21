@@ -16,7 +16,7 @@ public class Contact {
 	private String firstName;
     private String lastName;
     private String address;
-    private int age;
+    private String occupation;
     private long phoneNumber;
     private String email;
     
@@ -30,14 +30,14 @@ public class Contact {
 	 * @param phoneNumber
 	 * @param email
 	 */
-	public Contact(String iD, String title, String firstName, String lastName, String address, int age,
-					long phoneNumber, String email) {
+	public Contact(String iD, String title, String firstName, String lastName, String address, String occupation, 
+																					long phoneNumber, String email) {
 		this.iD = iD;
 		this.title = title;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.address = address;
-		this.age = age;
+		this.occupation = occupation;
 		this.phoneNumber = phoneNumber;
 		this.email = email;
 	}
@@ -113,17 +113,17 @@ public class Contact {
 	}
 
 	/**
-	 * @return the age
+	 * @return the occupation
 	 */
-	public int getAge() {
-		return age;
+	public String getOccupation() {
+		return occupation;
 	}
 
 	/**
-	 * @param age the age to set
+	 * @param occupation the occupation to set
 	 */
-	public void setAge(int age) {
-		this.age = age;
+	public void setOccupation(String occupation) {
+		this.occupation = occupation;
 	}
 
 	/**

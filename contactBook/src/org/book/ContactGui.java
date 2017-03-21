@@ -4,7 +4,8 @@ package org.book;
  * @author Lionel Lario
  * ClassName: ContactGUI
  * 
- * This is the GUI for creating a new contact
+ * This is the GUI for creating a new contact.
+ * It shows all the required fields to register a new contact
  */
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -23,8 +24,8 @@ public class ContactGui extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private Container content;
 	private JPanel labelPanel, fieldPanel, butPanel;
-	private JLabel title, firstName, lastName, address, phoneNumber, age, mail, message;
-	private JTextField fnameInput, lnameInput, pnumbInput, ageInput, mailInput;
+	private JLabel title, firstName, lastName, address, phoneNumber, occupation, mail, message;
+	private JTextField fnameInput, lnameInput, pnumbInput, occupationInput, mailInput;
 	private JTextArea adInput;
 	@SuppressWarnings("rawtypes")
 	private JComboBox titleInput;
@@ -56,18 +57,17 @@ public class ContactGui extends JFrame {
 		firstName = new JLabel("First name: ");
 		lastName = new JLabel("Last name: ");
 		address = new JLabel("Address: ");
-		age = new JLabel("Age: ");
+		occupation = new JLabel("Occupation: ");
 		phoneNumber = new JLabel("Phone number: ");
 		mail = new JLabel("Email: ");
 		message = new JLabel("<html><font color='red'>Please do not enter non-numeric characters in the phone number field"+
-							 		   ", enter a valid email address and "+
-									   "do not enter non-numeric character in the age field.</font></html>");
+							 		   ", enter a valid email address and </font></html>");
 		
 		//instantiating the textFields
 		fnameInput = new JTextField(15);
 		lnameInput = new JTextField(15);
 		pnumbInput = new JTextField(15);
-		ageInput = new JTextField(5);
+		occupationInput = new JTextField(50);
 		mailInput = new JTextField(15);
 		
 		//instantiating the textArea
@@ -75,7 +75,7 @@ public class ContactGui extends JFrame {
 		adInput.setEditable(true);
 		
 		//instantiating the JComboBox
-		String [] titre = {"MR", "MS", "MRS"};
+		String [] titre = {"MR.", "MS.", "MRS.", "Ph. D", "Prof."};
 		titleInput = new JComboBox(titre);
 		
 		//instantiating the JButton
@@ -84,21 +84,22 @@ public class ContactGui extends JFrame {
 		//instantiating the JScrollPane
 		p = new JScrollPane(adInput);
 		
-		//adding component to the panels
+		//adding label component to the panels
 		labelPanel.add(title);
 		labelPanel.add(firstName);
 		labelPanel.add(lastName);
-		labelPanel.add(age);
+		labelPanel.add(occupation);
 		labelPanel.add(phoneNumber);
 		labelPanel.add(mail);
 		labelPanel.add(address);
 		
 		labelPanel.setLayout(new GridLayout(8, 1));
 		
+		//adding field component to the panels
 		fieldPanel.add(titleInput);
 		fieldPanel.add(fnameInput);
 		fieldPanel.add(lnameInput);
-		fieldPanel.add(ageInput);
+		fieldPanel.add(occupationInput);
 		fieldPanel.add(pnumbInput);
 		fieldPanel.add(mailInput);
 		fieldPanel.add(p);
@@ -127,6 +128,11 @@ public class ContactGui extends JFrame {
 		setVisible(true);
 	}
 	
+	/**
+	 * This inner private class will be used to read events fired by
+	 * control buttons and handle the events.
+	 *
+	 */
 	private class ButtonHandler implements ActionListener
 	{
 		public void actionPerformed(ActionEvent ae)
@@ -136,10 +142,10 @@ public class ContactGui extends JFrame {
 			String fyname = lnameInput.getText();
 			String email = mailInput.getText();
 			long phnum = Long.parseLong(pnumbInput.getText());
-			int age = Integer.parseInt(ageInput.getText());
+			String occupation = occupationInput.getText();
 			String ad = adInput.getText();
 			
-			manager.insertContact(title, fname, fyname, ad, age, phnum, email);
+			manager.insertContact(title, fname, fyname, ad, occupation, phnum, email);
 			@SuppressWarnings("unused")
 			ContactInterface g = new ContactInterface(new ContactManager());
 			setVisible(false);

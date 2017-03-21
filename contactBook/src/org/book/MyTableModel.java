@@ -4,13 +4,17 @@ import javax.swing.table.DefaultTableModel;
 public class MyTableModel extends DefaultTableModel {
 
 	/**
+	 * @author Lionel Lario
 	 * 
+	 * Class: MyTableModel
+	 * This is GUI which extends the Table class from javax.swing.table.DefaultTableModel
+	 * It is used to display all the contact from the data base
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public MyTableModel(String [] t)
+	public MyTableModel(String [] tab)
 	{
-		super(t, 0);
+		super(tab, 0);
 	}
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })

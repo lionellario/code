@@ -1,7 +1,11 @@
 package org.book;
 /**
  * @author Lionel Lario
- *
+ * Class: UpdateContact
+ * This class is used to update a contact
+ * it will pop-up when the user to fire the "update event" by clicking on update
+ * on the contact interface, and it will come pre-filled with previous data from the
+ * data base.
  */
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -25,8 +29,8 @@ public class UpdateContact extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private Container content;
 	private JPanel labelPanel, fieldPanel, butPanel;
-	private JLabel title, firstName, lastName, address, phoneNumber, age, mail, message;
-	private JTextField fnameInput, lnameInput, pnumbInput, ageInput, mailInput;
+	private JLabel title, firstName, lastName, address, phoneNumber, occupation, mail, message;
+	private JTextField fnameInput, lnameInput, pnumbInput, occupationInput, mailInput;
 	private JTextArea adInput;
 	@SuppressWarnings("rawtypes")
 	private JComboBox titleInput;
@@ -55,7 +59,7 @@ public class UpdateContact extends JFrame {
 	  	content = getContentPane();
 		content.setLayout( new BorderLayout() );
 		
-		//instatiating the panels
+		//instantiating the panels
 		labelPanel = new JPanel();
 		fieldPanel = new JPanel();
 		butPanel = new JPanel();
@@ -66,18 +70,17 @@ public class UpdateContact extends JFrame {
 		firstName = new JLabel("First name: ");
 		lastName = new JLabel("Last name: ");
 		address = new JLabel("Address: ");
-		age = new JLabel("Age: ");
+		occupation = new JLabel("Occupation: ");
 		phoneNumber = new JLabel("Phone number: ");
 		mail = new JLabel("Email: ");
 		message = new JLabel("<html><font color='red'>Please do not enter non-numeric characters in the phone number field"+
-		 		   ", enter a valid email address and "+
-				   "do not enter non-numeric character in the age field.</font></html>");
+		 		   ", enter a valid email address </font></html>");
 		
 		//instantiating the textFields
 		fnameInput = new JTextField(15);
 		lnameInput = new JTextField(15);
 		pnumbInput = new JTextField(15);
-		ageInput = new JTextField(5);
+		occupationInput = new JTextField(5);
 		mailInput = new JTextField(15);
 		
 		//instantiating the textArea
@@ -98,22 +101,20 @@ public class UpdateContact extends JFrame {
 		p = new JScrollPane(adInput);
 		
 		//adding component to the panels
-		//labelPanel.add(id);
 		labelPanel.add(title);
 		labelPanel.add(firstName);
 		labelPanel.add(lastName);
-		labelPanel.add(age);
+		labelPanel.add(occupation);
 		labelPanel.add(phoneNumber);
 		labelPanel.add(mail);
 		labelPanel.add(address);
 		
 		labelPanel.setLayout( new GridLayout(8, 1) );
 		
-		//fieldPanel.add(idInput);
 		fieldPanel.add(titleInput);
 		fieldPanel.add(fnameInput);
 		fieldPanel.add(lnameInput);
-		fieldPanel.add(ageInput);
+		fieldPanel.add(occupationInput);
 		fieldPanel.add(pnumbInput);
 		fieldPanel.add(mailInput);
 		fieldPanel.add(p);
@@ -135,14 +136,14 @@ public class UpdateContact extends JFrame {
 		//the handler method
 		ButtonHandler handle = new ButtonHandler();
 		
-		//attach to ok button
+		//attach listener to the update button
 		update.addActionListener(handle);
 		
 		setSize(500, 440);
 		setVisible(true);
 	}
 	
-	/*
+	/**
 	 * This method fills text fields with values from the data base
 	 */
 	public void setFields() {
@@ -155,7 +156,7 @@ public class UpdateContact extends JFrame {
 			//Create a statement
 			Statement stm = con.createStatement();
 			
-			//Execute Query: insert the new contact
+			//Execute Query: select a contact
 			ResultSet rs = stm.executeQuery("SELECT * FROM addressbook WHERE id='"+getKeyID()+"'");
 			
 			if(rs.next()) {
@@ -163,7 +164,7 @@ public class UpdateContact extends JFrame {
 				lnameInput.setText(rs.getString("last_name"));
 				adInput.setText(rs.getString("address"));;
 				pnumbInput.setText(""+rs.getLong("phone"));;
-				ageInput.setText(""+rs.getInt("age"));;
+				occupationInput.setText(""+rs.getString("occupation"));;
 				mailInput.setText(rs.getString("email"));;
 			}
 			
@@ -186,13 +187,13 @@ public class UpdateContact extends JFrame {
 			String fname = fnameInput.getText();
 			String lname = lnameInput.getText();
 			String ad = adInput.getText();
-			int age = Integer.parseInt(ageInput.getText());
+			String occupt = occupationInput.getText();
 			long phnum = Long.parseLong(pnumbInput.getText());
 			String email = mailInput.getText();
 			
-			manager.UpdateContact(getKeyID(), title, fname, lname, ad, age, phnum, email);
+			manager.UpdateContact(getKeyID(), title, fname, lname, ad, occupt, phnum, email);
 			@SuppressWarnings("unused")
-			ContactInterface g = new ContactInterface(new ContactManager());
+			ContactInterface ci = new ContactInterface(new ContactManager());
 			setVisible(false);
 		}
 	}

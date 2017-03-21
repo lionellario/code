@@ -3,9 +3,10 @@ import javax.swing.UIManager;
 
 /**
  * @author Lionel Lario
- * Welcome to contactBook
+ * 
+ * Class: contactBook
  * This is a simple Graphical User Interface application
- * which manages and organizes your contacts
+ * which manages and organizes contacts
  *
  */
 
@@ -14,7 +15,7 @@ public class Book
 	public static void main (String [] arg)
 	{
 		/*
-		 * Creating the look and feel for the GUI
+		 * Creating the look and feel (style) for the GUI
 		 */
 		try {
 		    for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
@@ -28,13 +29,13 @@ public class Book
 		    try {
 		        UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
 		    } catch (Exception ex) {
-		        // not worth my time
+		        
 		    }
 		}
 		
 		//Instantiating a new Contact Manager
-		ContactManager c = new ContactManager();
+		ContactManager contactMg = new ContactManager();
 		@SuppressWarnings("unused")
-		ContactInterface g = new ContactInterface(c);
+		ContactInterface contactI = new ContactInterface(contactMg);
 	}
 }

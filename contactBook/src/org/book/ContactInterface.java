@@ -4,7 +4,7 @@ package org.book;
  * ClassName: ContacInterface
  * 
  * This is the GUI for displaying the list of contact
- * This class will also help creating, modifying and deleting a contact
+ * This class will also help create, modify and delete a contact
  */
 
 import java.awt.*;
@@ -14,9 +14,7 @@ import java.util.ArrayList;
 
 public class ContactInterface extends JFrame
 {
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	private JTable contactListTB;
 	private JMenuBar men;
@@ -70,20 +68,23 @@ public class ContactInterface extends JFrame
 		delete.addActionListener(handle);
 		modify.addActionListener(handle);
 		
-		//add the information taken from the databeses in the JTable
+		//add the information taken from the database in the JTable
 		JScrollPane scrollpane = new JScrollPane(contactListTB);
 		c.add(scrollpane, BorderLayout.CENTER);
 		c.add(butPanel, BorderLayout.SOUTH);
-		//pack();
+		
 		setSize(1000, 500);
 		setResizable(true);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
+	/**
+	 * @param contactListDB, the arrayList of contact returned by the contact manager
+	 */
 	private void displayContacts( ArrayList<Contact> contactListDB )
 	{
-		String [] titres = { "Id", "Title", "First Name", "Family Name", "Email", "Phone Number", "Age", "Address", "Select" };
+		String [] titres = { "Id", "Title", "First Name", "Family Name", "Email", "Phone Number", "Occupation", "Address", "Select" };
 		MyTableModel modeldata = new MyTableModel(titres);
 		contactListTB = new JTable(modeldata);
 		
@@ -93,7 +94,7 @@ public class ContactInterface extends JFrame
 			modeldata.addRow(new Object[]{contactListDB.get(i).getiD(), contactListDB.get(i).getTitle(), 
 													contactListDB.get(i).getFirstName(), contactListDB.get(i).getLastName(), 
 													contactListDB.get(i).getEmail(), contactListDB.get(i).getPhoneNumber(),
-													contactListDB.get(i).getAge(), contactListDB.get(i).getAddress(), Boolean.FALSE });
+													contactListDB.get(i).getOccupation(), contactListDB.get(i).getAddress(), Boolean.FALSE });
 		}
 	}
 	
@@ -113,7 +114,7 @@ public class ContactInterface extends JFrame
 				int n = contactListTB.getSelectedRow();
 				if( n < 0 )
 				{
-					JOptionPane.showMessageDialog(null, "No values selected" );
+					JOptionPane.showMessageDialog(null, "No value selected" );
 				}
 				else if( n >= 0 )
 				{
@@ -136,14 +137,14 @@ public class ContactInterface extends JFrame
 				int n = contactListTB.getSelectedRow();
 				if( n < 0 )
 				{
-					JOptionPane.showMessageDialog(null, "No values selected" );
+					JOptionPane.showMessageDialog(null, "No value selected" );
 				}
 				else if( n >= 0 )
 				{
-					ContactManager c = new ContactManager();
-					String idd = c.listOfContacts().get(n).getiD();
+					ContactManager cctm = new ContactManager();
+					String idd = cctm.listOfContacts().get(n).getiD();
 					@SuppressWarnings("unused")
-					UpdateContact cg = new UpdateContact(c, idd);
+					UpdateContact uct = new UpdateContact(cctm, idd);
 					setVisible(false);
 				}
 			}

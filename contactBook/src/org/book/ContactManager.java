@@ -7,6 +7,9 @@ import java.sql.*;
 /**
  * @author Lionel Lario
  *
+ * Class: Contact Manager
+ * This class is used to manage the contacts and interact with the database.
+ * It registers, retrieves, updates, and deletes a contact on demand of the user.
  */
 public class ContactManager {
 
@@ -22,7 +25,7 @@ public class ContactManager {
 	 * @return an ArrayList of contact
 	 */
 	public ArrayList<Contact> getArray() {
-		//create a temp array list
+		//create a temporary array list
 		ArrayList<Contact> temp = new ArrayList<Contact>();
 		for(int i = 0; i < ctm.size(); i++) {
 			temp.add(ctm.get(i));
@@ -55,7 +58,7 @@ public class ContactManager {
 	 * @param email
 	 * This method registers a new contact
 	 */
-	public void insertContact(String title, String fname, String lname, String adr, int age, long phn, String eml) {
+	public void insertContact(String title, String fname, String lname, String adr, String occupation, long phn, String eml) {
 		
 		try {
 			
@@ -69,8 +72,8 @@ public class ContactManager {
 			String id = generateID();
 			
 			//Execute Query: insert the new contact
-			stm.executeUpdate("INSERT INTO addressBook (id, title, first_name, last_name, address, age, phone, email) " + 
-			"VALUES ('"+id+"', '"+title+"', '"+fname+"', '"+lname+"', '"+adr+"', '"+age+"', '"+phn+"', '"+eml+"')");
+			stm.executeUpdate("INSERT INTO addressBook (id, title, first_name, last_name, address, occupation, phone, email) " + 
+			"VALUES ('"+id+"', '"+title+"', '"+fname+"', '"+lname+"', '"+adr+"', '"+occupation+"', '"+phn+"', '"+eml+"')");
 			
 			//close the statement and the connection
 			stm.close();
@@ -91,9 +94,9 @@ public class ContactManager {
 	 * @param age
 	 * @param phoneNumber
 	 * @param email
-	 * This method registers a new contact
+	 * This method updates a given contact
 	 */
-	public void UpdateContact(String key, String title, String fname, String lname, String adr, int age, long phn, String eml) {
+	public void UpdateContact(String key, String title, String fname, String lname, String adr, String occupation, long phn, String eml) {
 		
 		try {
 			
@@ -103,9 +106,9 @@ public class ContactManager {
 			//Create a statement
 			Statement stm = con.createStatement();
 			
-			//Execute Query: insert the new contact
+			//Execute Query: update the new contact
 			stm.executeUpdate("UPDATE addressbook SET title='"+title+"', first_name='"+fname+"', last_name='"+lname+"', "+
-								"address='"+adr+"', age='"+age+"', phone='"+phn+"', email='"+eml+"' WHERE id='"+key+"'");
+								"address='"+adr+"', occupation='"+occupation+"', phone='"+phn+"', email='"+eml+"' WHERE id='"+key+"'");
 
 			//close the statement and the connection
 			stm.close();
@@ -130,6 +133,9 @@ public class ContactManager {
 		return s;
 	}
 	
+	/**
+	 * @Return an arrayList of contacts from the data base
+	 */
 	public ArrayList<Contact> listOfContacts() {
 		
 		ArrayList<Contact> tempc = new ArrayList<Contact>();
@@ -141,7 +147,7 @@ public class ContactManager {
 			//Create a statement
 			Statement stm = con.createStatement();
 			
-			//Execute Query: insert the new contact
+			//Execute Query: select all the contact, ordered by first name
 			ResultSet rs = stm.executeQuery("SELECT * FROM addressbook ORDER BY first_name");
 			
 			String id;
@@ -150,7 +156,7 @@ public class ContactManager {
 			String lname;
 			String adss;
 			long phnumb;
-			int ag;
+			String occupt;
 			String mail;
 			
 			while( rs.next() )
@@ -160,11 +166,11 @@ public class ContactManager {
 				fname = rs.getString("first_name");
 				lname = rs.getString("last_name");
 				adss = rs.getString("address");
-				ag = rs.getInt("age");
+				occupt = rs.getString("occupation");
 				phnumb = rs.getLong("phone");
 				mail = rs.getString("email");
 				
-				tempc.add(new Contact(id, title, fname, lname, adss, ag, phnumb, mail ));
+				tempc.add(new Contact(id, title, fname, lname, adss, occupt, phnumb, mail ));
 			}
 			//close the statement and the connection
 			stm.close();
@@ -179,6 +185,9 @@ public class ContactManager {
 		return ctm;
 	}
 	
+	/**
+	 * @Param cid, the id of the contact to be deleted
+	 */
 	public void deleteContact(String cid) {
 		
 		try {
@@ -189,7 +198,7 @@ public class ContactManager {
 			//Create a statement
 			Statement stm = con.createStatement();
 			
-			//Execute Query: insert the new contact
+			//Execute Query: delete contact
 			stm.executeUpdate("DELETE FROM addressbook WHERE id = '"+cid+"'");
 			
 			//close the statement and the connection

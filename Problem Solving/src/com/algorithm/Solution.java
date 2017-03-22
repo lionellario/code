@@ -42,7 +42,7 @@ public class Solution {
 	 * this then create the another list of combination
 	 * Continue this process until there is no more sub-vectors in the Vector List
 	 */
-	public static Set<List<String>> CreateCombinations(Vector<Vector<String>> vector) {
+	public static Set<List<String>> createCombinations(Vector<Vector<String>> vector) {
 	    
 		//List is empty, no vectors in the list
 		if(vector.size() == 0){
@@ -121,7 +121,7 @@ public class Solution {
 	    lists.add(b);
 	    lists.add(c);
 
-	    Set<List<String>> combination = CreateCombinations(lists);
+	    Set<List<String>> combination = createCombinations(lists);
 	    
 	    //Print all the combinations
 	    for(List<String> list : combination) {

@@ -1,5 +1,8 @@
 package com.algorithm;
 
+/**
+ * @author Lionel Lario Kamdem
+ */
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -61,7 +64,7 @@ public class Solution {
 	     * combinations: [[sub-vector(0,0)], [sub-vector(0,1)], ...]
 	     * This then creates the first combination
 	     */
-	    for(String i: vector.get(0)) {
+	    for(String i: vector.get(index)) {
 	        List<String> newList = new ArrayList<String>();
 	        newList.add(i);
 	        combinations.add(newList);
@@ -72,7 +75,7 @@ public class Solution {
 	    while(index < vector.size()) {
 	        
 	    	//next sub-Vector in the Vector of vectors
-	    	List<String> nextList = vector.get(index);
+	    	List<String> nextSubVector = vector.get(index);
 	    	
 	        newCombinations = new HashSet<List<String>>();
 	        
@@ -83,7 +86,7 @@ public class Solution {
 	         */
 	        for(List<String> previous: combinations) {
 	            
-	        	for(String current: nextList) {
+	        	for(String current: nextSubVector) {
 	                
 	        		List<String> newList = new ArrayList<String>();
 	                newList.addAll(previous);

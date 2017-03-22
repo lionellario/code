@@ -7,13 +7,6 @@ import java.util.Set;
 import java.util.Vector;
 
 /**
- * To execute Java, please define "static void main" on a class
- * named Solution.
- *
- * If you need more classes, simply define them inline.
- */
-
-/**
 Problem: You're given a vector of vectors of words, e.g.: 
          [['quick', 'lazy'], ['brown', 'black', 'grey'], ['fox', 'dog']]. 
 

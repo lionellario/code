@@ -1,7 +1,7 @@
 package com.algorithm;
 
 /**
- * @author Lionel Lario Kamdem
+ * @author Lionel Lario
  */
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -27,7 +27,7 @@ Problem: You're given a vector of vectors of words, e.g.:
          lazy grey dog
 */
 
-public class Solution {
+public class Combination {
 	
 	/**
 	 * 

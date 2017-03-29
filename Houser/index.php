@@ -17,13 +17,13 @@
 	//echo $SET_LANG['Database error'];
 	
 	// load the configuration file
-	require_once("houser_core/houser.config.php");
+	require_once("core/config.php");
 	
 	//get the view sent by the controller
-	$get = "Houser_controller/controller.php";
+	$get = "controller/controller.php";
 	include( $get ); 
 	
 	/** get the pages sent by the controller and set the template */
-	include( $squelette );
+	include( $skeleton );
 					 
 ?>

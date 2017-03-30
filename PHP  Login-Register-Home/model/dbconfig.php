@@ -3,8 +3,8 @@
 
     $DB_host = "localhost";
     $DB_user = "root";
-    $DB_pass = "password";
-    $DB_name = "log_reg_home";
+    $DB_pass = "";
+    $DB_name = "php_mvc";
 
     try
     {

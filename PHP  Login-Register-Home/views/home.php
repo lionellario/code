@@ -12,9 +12,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css"  />
-		<link rel="stylesheet" href="css/style.css" type="text/css"  />
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<!-- Bootstrap core CSS -->
+		<link href="http://getbootstrap.com/dist/css/bootstrap.css" rel="stylesheet">
+		<link rel="stylesheet" href="<?php echo ADR_PATH; ?>css/style.css" type="text/css"  />
 		<title>welcome - <?php print($userRow['fname']); ?></title>
 	</head>
 

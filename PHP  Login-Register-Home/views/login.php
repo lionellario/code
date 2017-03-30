@@ -29,10 +29,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
 		<title>Login</title>
-		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css"  />
-		<link rel="stylesheet" href="css/style.css" type="text/css"  />
+		<!-- Bootstrap core CSS -->
+		<link href="http://getbootstrap.com/dist/css/bootstrap.css" rel="stylesheet">
+		<link rel="stylesheet" href="<?php echo ADR_PATH; ?>css/style.css" type="text/css"  />
 	</head>
 	<body>
 		<div class="container">
@@ -40,10 +44,11 @@
 				<form method="post">
 					<h2>Sign in.</h2>
 					<?php
-						if(isset($error)){
+						if(isset($error) && sizeof($error) > 0){
 					?>
 							<div class="alert alert-danger">
-								<i class="glyphicon glyphicon-warning-sign" style="color:red; font-size:13px;"><?php foreach($error AS $e){echo $e."<br/>";} ?></i>
+								<i class="glyphicon glyphicon-warning-sign" style="color:red; font-size:13px;"></i>
+								<?php foreach($error AS $e){echo $e."<br/>";} ?>
 							</div>
 					<?php
 						}
@@ -61,7 +66,7 @@
 						</button>
 					</div>
 					<br />
-					<label>Don't have account yet ! <a href="sign-up.php">Sign Up</a></label>
+					<label>Don't have account yet ! <a href="register">Sign Up</a></label>
 				</form>
 			</div>
 		</div>
